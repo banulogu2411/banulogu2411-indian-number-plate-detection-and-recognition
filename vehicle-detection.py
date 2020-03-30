@@ -2,7 +2,7 @@ import sys
 import cv2
 import numpy as np
 import traceback
-
+sys.path.append('/content/banulogu2411-indian-number-plate-detection-and-recognition/darknet')
 import darknet.python.darknet as dn
 
 from src.label 				import Label, lwrite
