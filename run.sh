@@ -22,7 +22,7 @@ check_dir()
 
 
 # Check if Darknet is compiled
-check_file "darknet/libdarknet.so"
+check_file "/content/banulogu2411-indian-number-plate-detection-and-recognition/darknet/libdarknet.so"
 retval=$?
 if [ $retval -eq 0 ]
 then
@@ -87,16 +87,16 @@ fi
 set -e
 
 # Detect vehicles
-python vehicle-detection.py $input_dir $output_dir
+python /content/banulogu2411-indian-number-plate-detection-and-recognition/vehicle-detection.py $input_dir $output_dir
 
 # Detect license plates
-python license-plate-detection.py $output_dir $lp_model
+python /content/banulogu2411-indian-number-plate-detection-and-recognition/license-plate-detection.py $output_dir $lp_model
 
 # OCR
-python license-plate-ocr.py $output_dir
+python /content/banulogu2411-indian-number-plate-detection-and-recognition/license-plate-ocr.py $output_dir
 
 # Draw output and generate list
-python gen-outputs.py $input_dir $output_dir > $csv_file
+python /content/banulogu2411-indian-number-plate-detection-and-recognition/gen-outputs.py $input_dir $output_dir > $csv_file
 
 # Clean files and draw output
 rm $output_dir/*_lp.png
